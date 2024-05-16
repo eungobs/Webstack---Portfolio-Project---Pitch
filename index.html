@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Community Platform</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide horizontal scrollbar caused by rotation */
+        }
+
+        #sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden; /* Hide overflowing stars */
+        }
+
+        #moon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: url('moon.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+            animation: rotateMoon 60s linear infinite;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes rotateMoon {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+
+        #title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            font-style: italic;
+            color: #FF5733; /* Orange */
+        }
+
+        .colorful-text1 {
+            color: #FF5733; /* Orange */
+        }
+
+        .colorful-text2 {
+            color: #C70039; /* Red */
+        }
+
+        .colorful-text3 {
+            color: #900C3F; /* Purple */
+        }
+
+        /* Positioning adjustments for paragraphs */
+        .paragraph-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .paragraph {
+            position: relative;
+            width: 80%; /* width as needed */
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            animation: moveParagraphs 12s linear forwards; /* animation duration */
+            opacity: 0; /* Initially hidden */
+            margin: 20px 0; /* margin between paragraphs */
+        }
+
+        /* Top position for each paragraph */
+        #paragraph1 {
+            animation-delay: 0s; /* Delay for starting animation */
+            color: #FF5733;
+        }
+
+        #paragraph2 {
+            animation-delay: 4s; /* Delay for starting animation */
+            color: #C70039;
+        }
+
+        #paragraph3 {
+            animation-delay: 8s; /* Delay for starting animation */
+            color: #900C3F;
+        }
+
+        #paragraph4 {
+            animation-delay: 12s; /* Delay for starting animation */
+            color: #900C3F;
+        }
+
+        #paragraph5 {
+            animation-delay: 16s; /* Delay for starting animation */
+            color: #C70039;
+        }
+
+        @keyframes moveParagraphs {
+            0% {
+                opacity: 0; /* Initially hidden */
+                transform: translateY(50px); /* Move down */
+            }
+            100% {
+                opacity: 1; /* Fully visible */
+                transform: translateY(0); /* Move back up */
+            }
+        }
+
+        /* Style for the button */
+        #next-page-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #FF5733; /* Orange */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #next-page-button:hover {
+            background-color: #C70039; /* Darker orange on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="sky">
+        <div id="moon"></div>
+        <!-- The stars dynamically using JavaScript -->
+    </div>
+
+    <!--The title as a clickable link -->
+    <a href="empowerher.html" id="title">Women's Community Platform</a>
+
+    <!-- The woman's image with a purple border -->
+<img id="woman-image" src="https://raw.githubusercontent.com/eungobs/Webstack---Portfolio-Project---Pitch/main/Her_Comunity__1_-removebg-preview.png" alt="Woman Image" style="position: absolute; top: 3px; right: 3px; width: 200px; height: 200px; border: 10px solid #900C3F;">
+
+    <!-- The website name -->
+    <div class="paragraph-container">
+        <!-- Add the first paragraph -->
+        <p id="paragraph1" class="paragraph">Women are like delicate glasses, each with its unique shape and strength.</p>
+
+        <!-- Add the second paragraph -->
+        <p id="paragraph2" class="paragraph">Just like glass, we can face shattering moments in life.</p>
+
+        <!-- Add the third paragraph -->
+        <p id="paragraph3" class="paragraph">Yet, it's in those moments of brokenness that we realize our resilience.</p>
+
+        <!-- Add the fourth paragraph -->
+        <p id="paragraph4" class="paragraph">Our support for each other is like the gentle hands that help assemble those pieces,</p>
+        <p id="paragraph5" class="paragraph">reminding us of our collective strength and the beauty in our shared experiences.</p>
+    </div>
+
+    <!-- Button to navigate to the next page -->
+    <button id="next-page-button" onclick="window.location.href = 'empowerher.html';">Next Page: EmpowerHer</button>
+    
+    <script>
+        // Dynamically generate stars and position them randomly in the sky
+        function createStars() {
+            const sky = document.getElementById('sky');
+            const numStars = 100;
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                sky.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+</body>
+</html>
