@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
+    <style>
+        body {
+            background-color: #FFC0CB; /* Pink background color */
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            position: relative; /* position to relative for footer positioning */
+            min-height: 100vh; /* body takes at least the full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+
+        h1 {
+            color: darkgoldenrod; /* Dark gold color for the heading */
+            font-style: italic; /* Italic font style for the heading */
+            font-weight: normal; /* Normal font weight for the heading */
+        }
+
+        .heading-emojis {
+            font-size: 24px;
+            margin-left: 5px;
+        }
+
+        .user {
+            background-color: #800080; /* Dark purple */
+            width: 200px;
+            height: auto;
+            margin: 20px;
+            padding: 20px;
+            float: left;
+            position: relative;
+        }
+
+        .username {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .comment-section {
+            margin-top: 20px;
+        }
+
+        .comment {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .comment-input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .comment-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .edit-button,
+        .delete-button {
+            margin-top: 10px;
+            background-color: #008CBA;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .delete-confirm {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .delete-confirm button {
+            margin-right: 10px;
+        }
+
+        footer {
+            position: absolute; /* position to absolute */
+            bottom: 20px; /* bottom distance */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* centering */
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1><strong>Her Community Chat</strong><span class="heading-emojis">&#10084;&#129303;</span></h1>
+
+    <div class="user">
+        <div class="username">Nyumani01</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit scelerisque felis, nec fermentum odio vestibulum ut.</p>
+        <div class="comment-section">
+        </div>
+        <form class="comment-form">
+            <input type="text" class="comment-input" placeholder="Write a comment..." required>
+            <button type="submit" class="comment-button">Comment</button>
+        </form>
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+        <div class="delete-confirm">
+            <p>Are you sure you want to delete this post?</p>
+            <button class="delete-confirm-yes">Yes</button>
+            <button class="delete-confirm-no">No</button>
+        </div>
+    </div>
+
+<!-- these links for the bottom of the page -->
+<a href="index.html">Go to Home Page</a> | 
+<a href="empowerher.html">Go to EmpowerHer Page</a>
+
+<footer>
+    <p>© 2024 EmpowerHer. All rights reserved.</p>
+    <p>Created by EE.Ndzukule</p>
+</footer>
+
+
+    <script>
+        let commentCount = 0;
+
+        document.querySelectorAll('.comment-form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const commentInput = this.querySelector('.comment-input');
+                const commentSection = this.parentElement.querySelector('.comment-section');
+                const commentValue = commentInput.value.trim();
+                if (commentValue !== '') {
+                    // Append the new comment to the comment section
+                    const newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    newComment.textContent = `User ${++commentCount}: ${commentValue}`;
+                    commentSection.appendChild(newComment);
+                    // Clear the comment input
+                    commentInput.value = '';
+                }
+            });
+        });
+
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const deleteConfirm = this.parentElement.querySelector('.delete-confirm');
+                deleteConfirm.style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.delete-confirm-no').forEach(button => {
+            button.addEventListener('click', function() {
+                const deleteConfirm = this.parentElement;
+                deleteConfirm.style.display = 'none';
+            });
+        });
+
+        document.querySelectorAll('.delete-confirm-yes').forEach(button => {
+            button.addEventListener('click', function() {
+                const user = this.parentElement.parentElement;
+                user.remove();
+            });
+        });
+
+        document.querySelectorAll('.edit-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const user = this.parentElement;
+                const postContent = user.querySelector('p');
+                const newPost = prompt('Edit your post:', postContent.textContent);
+                if (newPost !== null && newPost.trim() !== '') {
+                    postContent.textContent = newPost.trim();
+                }
+            });
+        });
+       
+    </script>
+</body>
+</html>
