@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerHer: A Safe Haven for Women</title>
+
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #301f0d; /* Night brown background color */
+            color: white; /* Text color changed to white */
+            overflow: hidden; /* Hide overflow to prevent horizontal scrollbar due to stars */
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: blinkStars 1s infinite alternate;
+        }
+
+        @keyframes blinkStars {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Adjusted link styles */
+        nav ul li a {
+            color: blue;
+            text-decoration: none;  
+        }
+        /* Style for the woman's image */
+        #woman-image {
+            position: absolute;
+            top: 3px;
+            right: 20px;
+            width: 100px;
+            height: 90px;
+            border: 15px solid #900C3F;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar - index.html -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li> <!-- Link to this page -->
+            <!-- More navigation links as needed -->
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content Section -->
+<section class="about-section">
+    <div class="container">
+        <h1>Welcome to EmpowerHer: A Safe Haven for Women</h1>
+        <p>
+            Welcome to EmpowerHer, a sanctuary for women to share, support, and empower one another in the face of gender-based violence. Our mission is to provide a platform where women can freely express themselves, find solidarity, and access resources to combat gender-based violence.
+        </p>
+
+        <h2>Our Purpose:</h2>
+        
+        <p>
+            EmpowerHer exists as a beacon of hope and resilience for women who have experienced or are currently facing gender-based violence. We understand the importance of creating a safe space where women can connect, share their stories, seek advice, and uplift each other. Through mutual support and collective strength, we aim to break the silence surrounding gender-based violence and foster a community of empowerment and healing.
+
+        </p>
+
+        <h2>What We Offer:</h2>
+        <ul>
+            <li>
+                <strong>Story Sharing:</strong> At EmpowerHer, women are encouraged to share their stories of survival, resilience, and triumph. Whether it's overcoming domestic abuse, sexual assault, or any form of gender-based violence, every story shared here serves as a source of inspiration and empowerment for others.
+            </li>
+            <li>
+                <strong>Support and Advice:</strong> We believe in the power of community support and offer a platform where women can seek advice, guidance, and encouragement from fellow members who have walked similar paths. Our community members are here to listen, validate experiences, and offer empathetic support.
+            </li>
+            <li>
+                <strong>Resource Hub:</strong> Access to information and resources is crucial for those navigating through gender-based violence. EmpowerHer provides a comprehensive resource hub with links to support organizations, helplines, legal aid services, shelters, and educational materials to help women find the assistance they need.
+            </li>
+            <li>
+                <strong>Safe and Inclusive Environment:</strong> EmpowerHer is committed to providing a safe, inclusive, and non-judgmental environment for all women, including girl children. We recognize the importance of early education in preventing future instances of gender-based violence and welcome young girls to join our community and learn about healthy relationships and early warning signs of abuse.
+            </li>
+            <li>
+                <strong>Interactive Community:</strong> Our platform facilitates meaningful interactions through story comments, discussions, and support groups. Members can engage with each other, offer words of encouragement, share advice, and build lasting connections with women who understand and validate their experiences.
+            </li>
+        </ul>
+
+        <h2>Join Us:</h2>
+        <p>
+            EmpowerHer is open to all women, regardless of age, background, or geographical location. Whether you're a survivor, a supporter, or someone seeking to make a difference, you are welcome to join our community.
+        </p>
+        <p>
+            Take the first step towards empowerment and <a href="register.html" style="color: blue;">join EmpowerHer today</a>. Your voice matters, your story matters, and together, we can make a difference.
+        </p>
+    </div>
+</section>
+
+<!-- Footer - index.html -->
+<footer>
+    <p>&copy; 2024 EmpowerHer. All rights reserved.</p>
+    <p>Created by EE.Ndzukule</p>
+</footer>
+
+<!-- JavaScript file link here -->
+<script src="script.js"></script>
+
+<!-- JavaScript for generating stars -->
+<script>
+    function createStars() {
+        const container = document.body;
+        const numStars = 100; // Stars as needed
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 10 + 's';
+            container.appendChild(star);
+        }
+    }
+
+    createStars();
+    
+</script>
+<!-- Woman's image -->
+<img id="woman-image" src="https://raw.githubusercontent.com/eungobs/Webstack---Portfolio-Project---Pitch/main/Her_Comunity__1_-removebg-preview.png" alt="Woman Image">
+
+</body>
+</html>
