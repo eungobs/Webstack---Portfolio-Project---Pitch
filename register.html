@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for EmpowerHer</title>
+    <style>
+        body {
+            /* Background image of a moon */
+            background-image: url('https://raw.githubusercontent.com/eungobs/Webstack---Portfolio-Project---Pitch/main/moon.png');
+            background-size: cover;
+            background-position: center;
+            /* Keep other styles intact */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white; /* Text color to white */
+        }
+
+        /* Style for form elements */
+        form {
+            font-weight: bold; /* Text to bold */
+        }
+
+        /* Style for labels */
+        label {
+            display: block; /* Labels block-level elements */
+            margin-bottom: 5px; /* Spacing between labels */
+        }
+
+        /* Style for input fields */
+        input, select {
+            width: 100%;
+            padding: 8px; /* Padding to input fields */
+            margin-bottom: 10px; /* Spacing between input fields */
+            box-sizing: border-box; /* Padding and border in the element's total width and height */
+        }
+
+        /* Style for buttons */
+        button {
+            padding: 10px 20px; /* Padding to buttons */
+            margin-right: 10px; /* Spacing between buttons */
+            background-color: #FF5733; /* Orange */
+            color: white; /* Text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #C70039; /* Darker orange on hover */
+        }
+
+        /* Style for the woman's image */
+        #woman-image {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 100px;
+            height: 80px;
+            border: 10px solid #900C3F;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register for EmpowerHer</h1>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" required>
+
+        <label for="cell">Cell Number:</label>
+        <input type="tel" id="cell" name="cell" required>
+
+        <label for="whatsapp">WhatsApp Number (if different from cell):</label>
+        <input type="tel" id="whatsapp" name="whatsapp">
+
+        <label for="province">Province:</label>
+        <select id="province" name="province">
+            <option value="Eastern Cape">Eastern Cape</option>
+            <option value="Free State">Free State</option>
+            <option value="Gauteng">Gauteng</option>
+            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+            <option value="Limpopo">Limpopo</option>
+            <option value="Mpumalanga">Mpumalanga</option>
+            <option value="Northern Cape">Northern Cape</option>
+            <option value="North West">North West</option>
+            <option value="Western Cape">Western Cape</option>
+        </select>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <!-- Woman's image -->
+    <img id="woman-image" src="https://raw.githubusercontent.com/eungobs/Webstack---Portfolio-Project---Pitch/main/Her_Comunity__1_-removebg-preview.png" alt="Woman Image">
+
+    <!-- Button to go back to the EmpowerHer page -->
+    <a href="empowerher.html"><button>Back to EmpowerHer</button></a>
+    <!-- Button to go back to the home page -->
+    <a href="index.html"><button>Home</button></a>
+    <!-- Go back to community page -->
+    <a href="community.html">Go to Her Community Chat</a>
+
+
+    <script src="registration.js"></script>
+</body>
+</html>
