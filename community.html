@@ -78,6 +78,16 @@
             cursor: pointer;
             border-radius: 3px;
         }
+    
+        /* Style for the woman's image */
+        #woman-image {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 100px;
+            height: 90px;
+            border: 15px solid #900C3F;
+        }
 
         .delete-confirm {
             display: none;
@@ -90,9 +100,9 @@
 
         footer {
             position: absolute; /* position to absolute */
-            bottom: 20px; /* bottom distance */
+            bottom: 20px; /* Adjust for bottom distance */
             left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* centering */
+            transform: translateX(-50%); /* Adjustment for centering */
             text-align: center;
             color: blue;
         }
@@ -103,7 +113,8 @@
 
     <div class="user">
         <div class="username">Nyumani01</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit scelerisque felis, nec fermentum odio vestibulum ut.</p>
+        <p>My Journey as a Survivor.</p>
+        <pAs a survivor of abuse, I've learned that silence only perpetuates the pain. For too long, I suffered in silence, but today, I choose to speak out. Abuse doesn't discriminate; it can happen to anyone. I endured emotional manipulation, verbal assaults, and physical violence, but I refused to let it define me. With the support of a trusted friend, I found the courage to break free and rebuild my life. Though the scars remain, I'm no longer a victim—I'm a survivor, standing tall and sharing my story to inspire others to find their strength and break free from the cycle of abuse. Together, let's break the silence and empower survivors everywhere.></p>
         <div class="comment-section">
         </div>
         <form class="comment-form">
@@ -119,7 +130,7 @@
         </div>
     </div>
 
-<!-- these links for the bottom of the page -->
+<!-- Add these links at the bottom of the page -->
 <a href="index.html">Go to Home Page</a> | 
 <a href="empowerher.html">Go to EmpowerHer Page</a>
 
@@ -128,6 +139,7 @@
     <p>Created by EE.Ndzukule</p>
 </footer>
 
+    <!-- Repeat the user div for each user -->
 
     <script>
         let commentCount = 0;
@@ -183,5 +195,8 @@
         });
        
     </script>
+    <!-- Woman's image -->
+<img id="woman-image" src="https://raw.githubusercontent.com/eungobs/Webstack---Portfolio-Project---Pitch/main/Her_Comunity__1_-removebg-preview.png" alt="Woman Image">
+
 </body>
 </html>
