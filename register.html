@@ -113,7 +113,15 @@
     <!-- Go back to community page -->
     <a href="community.html">Go to Her Community Chat</a>
 
-
-    <script src="registration.js"></script>
+ <script>
+        function register(event) {
+            event.preventDefault(); // Prevent default form submission
+            // You can add your registration logic here
+            alert('Registration successful!'); // For demonstration, show an alert
+            document.getElementById("registrationForm").reset(); // Reset form after submission
+            window.location.href = '/community'; // Redirect to Her Community Chat page
+        }
+    </script>
+   
 </body>
 </html>
